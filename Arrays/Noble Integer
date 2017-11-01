@@ -1,0 +1,46 @@
+/*
+Given an array arr[], find a Noble integer in it. An integer x is said to be Noble in arr[] if the number of integers greater than x are equal to x. If there are many Noble integers, return any of them. If there is no, then return -1.
+
+Examples:
+
+Input  : [7, 3, 16, 10]
+Output : 3  
+Number of integers greater than 3
+is three.
+
+Input  : [-1, -9, -2, -78, 0]
+Output : 0
+Number of integers greater than 0
+is zero.
+*/
+
+
+public class Solution {
+    public int solve(ArrayList<Integer> A) {
+        int j = 0;
+        int[] arr = new int[A.size()];
+        
+    
+        
+        for(int i=0; i<A.size(); i++)
+        {
+            arr[i] = A.get(i);
+        }
+        
+        Arrays.sort(arr);
+        
+        for(int i=0; i<arr.length-1; i++)
+        {
+            if(arr[i] == arr[i+1])
+                continue;
+                
+            if(arr[i] == ((arr.length)-(i)-1))
+                return 1;
+        }
+      
+        
+        if (arr[arr.length-1] == 0)
+            return 1;
+        return -1;
+    }
+}
