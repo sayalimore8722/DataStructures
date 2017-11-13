@@ -32,3 +32,5 @@ public boolean canBalance(int[] nums) {
   
   return false;
 }
+
+//Use one Pointer total sum and reduce the left elements from it
